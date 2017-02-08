@@ -1,2 +1,1 @@
-# starter-gallery
-Starter for website conversion lab & tutorials
+# COMP 4711 Assignment
