@@ -60,7 +60,7 @@ class Welcome extends Application
         $this->data['earnings'] = $countrevenue;
         $this->data['expenses'] = $countexpence;
         
-        $this->data['ptitle'] = "Summary";
+        $this->data['ptitle'] = "<span class=\"plantname\">Mango Palnt</span> Dashboard <span class=\"glyphicon glyphicon-dashboard\"></span>";
 		$this->render();
 	}
 }

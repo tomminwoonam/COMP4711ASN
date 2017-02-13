@@ -61,6 +61,7 @@
     padding: 10px;
 }
 
+
 img {
     margin: 0 auto;
 }
@@ -163,6 +164,7 @@ body {
     background: #FFF !important;
     color: #000 !important;
 }
-.white {
-    color: white;
+
+.plantname {
+    color: #f8831b;
 }

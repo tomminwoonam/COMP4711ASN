@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Dashboard</a></li>
                         <li><a href="/parts">Parts</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/assembly">
                             Assembly 

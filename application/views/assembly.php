@@ -1,4 +1,4 @@
-<div class="container-fluid partscontainer">
+<div class="container-fluid partscontainers">
     <div  class="col-sm-12 toptitle"><h1 class="sectitle">Robot Parts</h1></div>
     <div class="col-sm-12">
         <!-- Top -->
@@ -6,7 +6,7 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        <h3 class="white">Torso</h3>
+                        <h3>Torso</h3>
                     </th>
                 </thead>
                 {torso}
@@ -26,7 +26,7 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        <h3 class="white">Top</h3>
+                        <h3>Top</h3>
                     </th>
                 </thead>
                 {top}
@@ -45,7 +45,7 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        <h3 class="white">Bottom</h3>
+                        <h3>Bottom</h3>
                     </th>
                 </thead>
                 {bottom}
