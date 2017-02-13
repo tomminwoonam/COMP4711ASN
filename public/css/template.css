@@ -62,34 +62,34 @@ body {
     background-color: white;
 }
 .redbox {
-    background-color: #ff4f4f;
+    /*background-color: #ff4f4f;*/
     color: #3f3f3f;
     border-radius: 25px;
-    /*border: 2px solid #f72f2f;*/
+    border: 8px solid #f72f2f;
     padding: 50px;
     margin: 20px 20px;
 }
 .greenbox {
-    background-color: #91ff4f;
+    /*background-color: #91ff4f;*/
     color: #3f3f3f;
     border-radius: 25px;
-    /*border: 2px solid #37dd7b;*/
+    border: 8px solid #91ff4f;
     padding: 50px;
     margin: 20px 20px;
 }
 .graybox {
-    background-color: #3f3f3f;
-    color: white;
+    /*background-color: #3f3f3f;*/
+    color: #3f3f3f;
     border-radius: 25px;
-    /*border: 2px solid #5e5c5b;*/
+    border: 8px solid #3f3f3f;
     padding: 50px;
     margin: 20px 20px;
 }
 .bluebox {
-    background-color: #4f9aff;
+    /*background-color: #4f9aff;*/
     color: #3f3f3f;
     border-radius: 25px;
-    /*border: 2px solid #2f92f7;*/
+    border: 8px solid #2f92f7;
     padding: 50px;
     margin: 20px 20px;
 }
@@ -117,9 +117,9 @@ body {
 }
 .sectitle {
     border-radius: 25px;
-    background-color: #91ff4f;
     color: #3f3f3f;
     text-align: center;
+    border: 5px solid #3f3f3f;
 }
 .toptitle {
     border-radius: 25px;
