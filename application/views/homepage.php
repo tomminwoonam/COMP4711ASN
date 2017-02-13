@@ -17,13 +17,13 @@
     <div class="col-sm-12">
         <div class="col-sm-5 greenbox">
             <h4>Earnings</h4>
-            <h3 class="homedashvalue">{earnings}</h3>
+            <h3 class="homedashvalue">${earnings}</h3>
         </div>
         <div class="col-sm-2">
         </div>
         <div class="col-sm-5 redbox">
             <h4>Expenses</h4>
-            <h3 class="homedashvalue">{expenses}</h3>
+            <h3 class="homedashvalue">${expenses}</h3>
         </div>
 
     </div>
