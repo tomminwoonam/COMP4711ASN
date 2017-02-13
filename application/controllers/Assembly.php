@@ -90,7 +90,7 @@ class Assembly extends Application
         /**
          * End get robots
          */
-		$this->data['ptitle'] = "Assembly";
+		$this->data['ptitle'] = "<span class=\"glyphicon glyphicon-wrench\"></span>Assembly";
 		$this->render();
 	}
 }
