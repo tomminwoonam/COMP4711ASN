@@ -2,9 +2,8 @@
 
 <div class="container-fluid">
     <div class="col-sm-12">
-        <table class="table">
             <!-- Top -->
-            <td>
+        <div class="col-sm-4">
                 <table class="table">
                     <thead>
                         <th class="assembly-header" colspan="3">
@@ -22,9 +21,9 @@
                     </tr>
                     {/torso}
                 </table>
-            </td>
+            </div>
             <!-- Torso -->
-            <td>
+            <div class="col-sm-4">
                 <table class="table">
                     <thead>
                         <th class="assembly-header" colspan="3">
@@ -41,9 +40,9 @@
                     </tr>
                     {/top}
                 </table>
-                </td>
+                </div>
                 <!-- Legs -->
-                <td>
+                <div class="col-sm-4">
                     <table class="table">
                         <thead>
                             <th class="assembly-header" colspan="3">
@@ -60,8 +59,7 @@
                         </tr>
                         {/bottom}
                     </table>
-                    </td>
-        </table>
+                    </div>
     </div>
     <div class="col-sm-12">
         <div class="col-sm-6">
