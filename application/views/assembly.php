@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid partscontainer">
     <div  class="col-sm-12 toptitle"><h1 class="sectitle">Robot Parts</h1></div>
     <div class="col-sm-12">
         <!-- Top -->
@@ -6,11 +6,11 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        <h3>Torso</h3>
+                        <h3 class="white">Torso</h3>
                     </th>
                 </thead>
                 {torso}
-                <tr>
+                <tr class="aparts">
                     <td>
                         <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
@@ -26,11 +26,11 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        <h3>Top</h3>
+                        <h3 class="white">Top</h3>
                     </th>
                 </thead>
                 {top}
-                <tr>
+                <tr class="aparts">
                     <td>
                         <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
@@ -45,11 +45,11 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        <h3>Bottom</h3>
+                        <h3 class="white">Bottom</h3>
                     </th>
                 </thead>
                 {bottom}
-                <tr>
+                <tr class="aparts">
                     <td>
                         <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
@@ -72,7 +72,7 @@
     <div class="col-sm-12 assembled">
         <table class="table table-responsive">
             {robots}
-            <tr>
+            <tr class="aparts">
                 <td>
                     <table class="table table-responsive">
                         <tr>

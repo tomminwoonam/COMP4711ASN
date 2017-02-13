@@ -12,7 +12,7 @@
 }
 .navbar {
     margin-bottom: 0;
-    /*navbar colour #201e1d*/
+    /*navbar colour*/
     background-color: #201e1d;
     border: 0;
     opacity: 0.9;
@@ -38,9 +38,29 @@
     text-align: center;
 }
 .parts {
-    color: #5e5c5b;
+    background-color: white;
     text-align: center;
+    color: #3f3f3f;
+    border-radius: 25px;
+    border: 10px solid #3f3f3f;
+    padding: 10px;
 }
+.aparts {
+    background-color: white;
+    text-align: center;
+    color: #3f3f3f;
+    border-radius: 25px;
+    border: 10px solid #3f3f3f;
+    padding: 20px;
+}
+.partscontainer {
+    text-align: center;
+    background-color: #3f3f3f;
+    border-radius: 15px;
+    border: 5px solid #3f3f3f;
+    padding: 10px;
+}
+
 img {
     margin: 0 auto;
 }
@@ -55,43 +75,45 @@ footer {
 html,
 body {
     height: 100%;
-    margin: 0;
+    margin: auto;
     padding: 0;
     /*content text colour*/
     color: #5e5c5b;
     background-color: white;
 }
+.homecontainer {
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid white;
+    padding: 10px;
+}
 .redbox {
-    /*background-color: #ff4f4f;*/
+    background-color: #ff4f4f;
     color: #3f3f3f;
-    border-radius: 25px;
-    border: 8px solid #f72f2f;
+    border-radius: 50px;
+    border: 8px solid white;
     padding: 50px;
-    margin: 20px 20px;
 }
 .greenbox {
-    /*background-color: #91ff4f;*/
+    background-color: #91ff4f;
     color: #3f3f3f;
-    border-radius: 25px;
-    border: 8px solid #91ff4f;
+    border-radius: 45px;
+    border: 8px solid white;
     padding: 50px;
-    margin: 20px 20px;
 }
 .graybox {
-    /*background-color: #3f3f3f;*/
-    color: #3f3f3f;
-    border-radius: 25px;
-    border: 8px solid #3f3f3f;
+    background-color: #3f3f3f;
+    color: white;
+    border-radius: 45px;
+    border: 8px solid white;
     padding: 50px;
-    margin: 20px 20px;
 }
 .bluebox {
-    /*background-color: #4f9aff;*/
+    background-color: #4f9aff;
     color: #3f3f3f;
-    border-radius: 25px;
-    border: 8px solid #2f92f7;
+    border-radius: 45px;
+    border: 8px solid white;
     padding: 50px;
-    margin: 20px 20px;
 }
 .assembly-header {
     text-align: center;
@@ -105,8 +127,8 @@ body {
     padding-top: 50px;
 }
 .partimg {
-    border-radius: 25px;
-    border: 5px solid #91ff4f;
+    border-radius: 45px;
+    border: 5px solid #3f3f3f;
     padding: 20px;
 }
 .titlediv {
@@ -120,6 +142,7 @@ body {
     color: #3f3f3f;
     text-align: center;
     border: 5px solid #3f3f3f;
+    background-color: white;
 }
 .toptitle {
     border-radius: 25px;
@@ -139,4 +162,7 @@ body {
 .open .dropdown-toggle {
     background: #FFF !important;
     color: #000 !important;
+}
+.white {
+    color: white;
 }
