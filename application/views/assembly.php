@@ -1,6 +1,6 @@
 <h1>Assembly</h1>
 
-<div class="row">
+<div class="container-fluid">
     <table cellpadding="3" cellspacing="3" width="100%" border="2">
         <!-- Top -->
         <td>
@@ -13,7 +13,7 @@
                 {torso}
                 <tr>
                     <td class="assembly-td">
-                        <img class="img-responsive" src="/img/parts/{partCode}.jpeg" title="{partCode}">
+                        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
                     <td class="assembly-td">
                         <input type="checkbox" name="torso" value="{id}"
@@ -33,7 +33,7 @@
                 {top}
                 <tr>
                     <td width="50%">
-                        <img class="img-responsive" src="/img/parts/{partCode}.jpeg" title="{partCode}">
+                        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
                     <td class="assembly-td">
                         <input type="checkbox" name="top" value="{id}"
@@ -53,7 +53,7 @@
                 {bottom}
                 <tr>
                     <td width="50%">
-                        <img class="img-responsive" src="/img/parts/{partCode}.jpeg" title="{partCode}">
+                        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
                     <td class="assembly-td">
                         <input type="checkbox" name="bottom" value="{id}"
@@ -85,13 +85,13 @@
                 <td class="assembly-td">
                     <table>
                         <tr>
-                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{topId}.jpeg" title="{partCode}">
+                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{topId}.png" title="{partCode}">
                         </tr>
                         <tr>
-                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{bottomId}.jpeg" title="{partCode}">
+                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{bottomId}.png" title="{partCode}">
                         </tr>
                         <tr>
-                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{torsoId}.jpeg" title="{partCode}">
+                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{torsoId}.png" title="{partCode}">
                         </tr>
                     </table>
                 </td>
