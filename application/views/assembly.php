@@ -60,7 +60,7 @@
             </table>
         </div>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-12" id="assembledbots">
         <div class="col-sm-6">
             <button type="button" class="btn btn-info btn-block">Build It</button>
         </div>

@@ -8,14 +8,13 @@
 }
 .nav-tabs li a {
     /*navbar item colour - mobile*/
-    color: #f72f2f;
+    color: #f72f2f
 }
 .navbar {
     margin-bottom: 0;
     /*navbar colour*/
     background-color: #201e1d;
     border: 0;
-    font-size: 20px !important;
     opacity: 0.9;
 }
 .navbar li a,
@@ -27,7 +26,7 @@
 }
 .navbar-nav li a:hover {
     /*Navbar items hover colour*/
-    color: skyblue;
+    color: black;
 }
 .container {
     padding-top: 10px;
@@ -106,19 +105,19 @@ body {
 }
 .partimg {
     border-radius: 25px;
-    border: 2px solid #ff4f4f;
+    border: 5px solid  #91ff4f;
     padding: 20px;
 }
 .titlediv {
     padding-top: 7%;
     padding-left: 40%;
-    background-color: #ff4f4f;
-    color: white;
+    background-color: #91ff4f;
+    color: #3f3f3f;
 }
 .sectitle {
     border-radius: 25px;
-    background-color: #ff4f4f;
-    color: white;
+    background-color: #91ff4f;
+    color: #3f3f3f;
     text-align: center;
 }
 .toptitle {
@@ -128,4 +127,12 @@ body {
 }
 .homedashvalue {
     text-align: center;
+}
+.navbar-nav > li > .dropdown-menu {
+    background-color: #3f3f3f;
+}
+
+.navbar-nav > li > .dropdown-menu a:hover{
+    background-color: #91ff4f;
+    color: #3f3f3f;
 }
