@@ -84,3 +84,18 @@ body {
     /*border: 2px solid #2f92f7;*/
     padding: 20px;
 }
+.assembly-header{
+    text-align: center;
+    width: 100%;
+}
+
+.assembly-td
+{
+    text-align: center;
+    width: 50%;
+}
+
+.button {
+    display: block;
+    width: 100%;
+}
