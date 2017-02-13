@@ -6,7 +6,7 @@
             <table class="table table-responsive">
                 <thead>
                     <th class="assembly-header">
-                        Torso
+                        <h3>Torso</h3>
                     </th>
                 </thead>
                 {torso}
@@ -25,8 +25,8 @@
         <div class="col-sm-4">
             <table class="table table-responsive">
                 <thead>
-                    <th>
-                        Top
+                    <th class="assembly-header">
+                        <h3>Top</h3>
                     </th>
                 </thead>
                 {top}
@@ -44,8 +44,8 @@
         <div class="col-sm-4">
             <table class="table table-responsive">
                 <thead>
-                    <th>
-                        Bottom
+                    <th class="assembly-header">
+                        <h3>Bottom</h3>
                     </th>
                 </thead>
                 {bottom}

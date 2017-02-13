@@ -30,7 +30,7 @@
     color: skyblue;
 }
 .container {
-    padding-top: 80px;
+    padding-top: 10px;
     padding-bottom: 120px;
     min-height: 100%;
 }
@@ -63,7 +63,7 @@ body {
 }
 .redbox {
     background-color: #ff4f4f;
-    color: white;
+    color: #3f3f3f;
     border-radius: 25px;
     /*border: 2px solid #f72f2f;*/
     padding: 50px;
@@ -93,18 +93,6 @@ body {
     padding: 50px;
     margin: 20px 20px;
 }
-.grayoutline {
-    color: white;
-    border-radius: 25px;
-    border: 2px solid #b4b4b3;
-    padding: 20px;
-}
-.redoutline {
-    color: white;
-    border-radius: 25px;
-    border: 2px solid #c97979;
-    padding: 20px;
-}
 .assembly-header {
     text-align: center;
     width: 100%;
@@ -122,8 +110,7 @@ body {
     padding: 20px;
 }
 .titlediv {
-    padding: 20px;
-    padding-top: 10%;
+    padding-top: 7%;
     padding-left: 40%;
     background-color: #ff4f4f;
     color: white;
