@@ -61,7 +61,7 @@ class Parts extends Application
 			$parts_list[] = array('id' => $record['id'], 'partCode' => $partCode, 'partType' => $partType, 'modelType' => $modelType);
 		}
 		$this->data['parts'] = $parts_list;
-		
+		$this->data['ptitle'] = "Parts";
 		$this->render();
 	}
 	
@@ -78,6 +78,7 @@ class Parts extends Application
 		$this->data['location'] = $source['buildLocation'];
 		$this->data['date'] = $source['dateTime'];
 		
+        $this->data['ptitle'] = "Part Detail";
 		$this->render();
 	}
 }

@@ -90,7 +90,7 @@ class Assembly extends Application
         /**
          * End get robots
          */
-		
+		$this->data['ptitle'] = "Assembly";
 		$this->render();
 	}
 }

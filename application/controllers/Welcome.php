@@ -59,6 +59,8 @@ class Welcome extends Application
         $this->data['totparts'] = $countparts;
         $this->data['earnings'] = $countrevenue;
         $this->data['expenses'] = $countexpence;
+        
+        $this->data['ptitle'] = "Summary";
 		$this->render();
 	}
 }

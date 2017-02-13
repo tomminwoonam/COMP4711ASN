@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <html lang="en">
 
 <head>
@@ -21,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index.php#home"><img src="img/panda.png" width="100"></a>
+                <a class="navbar-brand" href="/index.php#home"><img src="/img/panda.png" width="100"></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -29,18 +33,17 @@
                     <li><a href="/parts">Parts</a></li>
                     <li><a href="/assembly">Assembly</a></li>
                     <li><a href="/history">History</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li class="disabled"><a href="">About</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <div class="container" style="clear:all">{content}
+    <div class="container-fluid titlediv"><h1 class="ptitle">{ptitle}</h1></div>
+    <div class="container">
+        {content}
     </div>
-
-
     <footer id="footerucorp">
-        <img src="img/umbrellacorp.png" height="50">
+        <img src="/img/umbrellacorp.png" height="50">
     </footer>
 </body>
 

@@ -1,5 +1,3 @@
-<h1>Parts List</h1>
-
 <div class=" container-fluid">
     {parts}
     <div class="col-sm-4 parts">
