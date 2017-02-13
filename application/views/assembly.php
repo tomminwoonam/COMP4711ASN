@@ -70,20 +70,20 @@
         </div>
     </div>
     <h1>Assembled Robots</h1>
-    <div class="col-sm-12">
+    <div class="col-sm-12 assembled">
         <table class="table">
             {robots}
             <tr>
-                <td class="assembly-td">
-                    <table>
+                <td>
+                    <table class="table">
                         <tr>
-                            <img class="img-responsive" style="height:25%;" src="/img/parts/{topId}.png" title="{partCode}">
+                            <img style="height:50%;" src="/img/parts/{topId}.png" title="{partCode}">
                         </tr>
                         <tr>
-                            <img class="img-responsive" style="height:25%;" src="/img/parts/{bottomId}.png" title="{partCode}">
+                            <img style="height:50%;" src="/img/parts/{bottomId}.png" title="{partCode}">
                         </tr>
                         <tr>
-                            <img class="img-responsive" style="height:25%;" src="/img/parts/{torsoId}.png" title="{partCode}">
+                            <img style="height:50%;" src="/img/parts/{torsoId}.png" title="{partCode}">
                         </tr>
                     </table>
                 </td>
