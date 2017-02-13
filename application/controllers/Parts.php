@@ -67,7 +67,7 @@ class Parts extends Application
 	
 	public function details($id)
 	{
-		
+		$this->data['pagetitle'] = 'Part Details';
 		$this->data['pagebody'] = 'partsDetails';
 		
 		$source = $this->part->get($id);
