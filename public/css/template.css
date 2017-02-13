@@ -49,3 +49,19 @@ html, body {
     /*content text colour*/
     color: #777;
 }
+
+.assembly-header{
+    text-align: center;
+    width: 100%;
+}
+
+.assembly-td
+{
+    text-align: center;
+    width: 50%;
+}
+
+.button {
+    display: block;
+    width: 100%;
+}

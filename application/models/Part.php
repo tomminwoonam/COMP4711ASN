@@ -50,7 +50,7 @@ class Part extends CI_Model {
 	{
 		parent::__construct();
 	}
-	// retrieve a single quote
+	// retrieve a single part
 	public function get($which)
 	{
 		// iterate over the data until we find the one we want
@@ -59,7 +59,8 @@ class Part extends CI_Model {
 				return $record;
 		return null;
 	}
-	// retrieve all of the quotes
+
+	// retrieve all of the parts
 	public function all()
 	{
 		return $this->data;
