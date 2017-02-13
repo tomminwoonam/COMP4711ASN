@@ -3,7 +3,7 @@
 
 <head>
     <title>{pagetitle}</title>
-    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/template.css" />
@@ -12,7 +12,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-	
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index.php#home"><img src="/img/panda.png" width="100"></a>
+                <a class="navbar-brand" href="/index.php#home"><img src="img/panda.png" width="100"></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -35,13 +35,13 @@
         </div>
     </nav>
 
-    <div class="container" style="clear:all">
-        <div class="container-fluid">{content}</div>
+    <div class="container" style="clear:all">{content}
     </div>
-    
-    
+
+
     <footer id="footerucorp">
-        <img src="/img/umbrellacorp.png" height="50">
+        <img src="img/umbrellacorp.png" height="50">
     </footer>
 </body>
+
 </html>
