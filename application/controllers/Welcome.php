@@ -22,11 +22,18 @@ class Welcome extends Application
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
+	public function index() {
 		$this->data['pagetitle'] = 'Homepage';
 		$this->data['pagebody'] = 'homepage';
-		
+        
+		$source = $this->part->all();
+        
+		$count = 0;
+        
+		foreach ($source as $record) {
+            $count++;
+        }
+        
 		
 		$this->render();
 	}

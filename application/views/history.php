@@ -1,7 +1,7 @@
 <h1>History</h1>
 
-<div class="row">
-    <table>
+<div class="container-fluid">
+    <table class="table table-hover">
         <tr>
         <th>Activity Type</th>
         <th>Activity Date</th>
