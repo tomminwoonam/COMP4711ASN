@@ -28,7 +28,8 @@ class History extends Application
 
         foreach ($source as $record)
         {
-            $history_list[] = array('id' => $record['id'], 'historyType' => $record['historyType'], 'dateTime' => $record['dateTime']);
+            $history_list[] = array('id' => $record['id'], 'historyType' => $record['historyType'], 'dateTime' => $record['dateTime'],
+                'cost' => $record['cost'], 'revenue' => $record['revenue']);
         }
 
         $this->data['history'] = $history_list;
