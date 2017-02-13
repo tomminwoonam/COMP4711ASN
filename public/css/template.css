@@ -62,31 +62,47 @@ body {
     background-color: white;
 }
 .redbox {
-    background-color: #c97979;
+    background-color: #ff4f4f;
     color: white;
     border-radius: 25px;
     /*border: 2px solid #f72f2f;*/
-    padding: 20px;
+    padding: 50px;
+    margin: 20px 20px;
 }
 .greenbox {
-    background-color: #6fcf96;
-    color: white;
+    background-color: #91ff4f;
+    color: #3f3f3f;
     border-radius: 25px;
     /*border: 2px solid #37dd7b;*/
-    padding: 20px;
+    padding: 50px;
+    margin: 20px 20px;
 }
 .graybox {
-    background-color: #b4b4b3;
+    background-color: #3f3f3f;
     color: white;
     border-radius: 25px;
     /*border: 2px solid #5e5c5b;*/
-    padding: 20px;
+    padding: 50px;
+    margin: 20px 20px;
 }
 .bluebox {
-    background-color: #8db8e4;
-    color: white;
+    background-color: #4f9aff;
+    color: #3f3f3f;
     border-radius: 25px;
     /*border: 2px solid #2f92f7;*/
+    padding: 50px;
+    margin: 20px 20px;
+}
+.grayoutline {
+    color: white;
+    border-radius: 25px;
+    border: 2px solid #b4b4b3;
+    padding: 20px;
+}
+.redoutline {
+    color: white;
+    border-radius: 25px;
+    border: 2px solid #c97979;
     padding: 20px;
 }
 .assembly-header {
@@ -106,7 +122,6 @@ body {
     padding: 20px;
 }
 .titlediv {
-    
     padding: 20px;
     padding-top: 10%;
     padding-left: 40%;
@@ -124,7 +139,6 @@ body {
     padding: 0;
     padding-top: 0;
 }
-
 .homedashvalue {
     text-align: center;
 }
