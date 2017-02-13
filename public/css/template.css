@@ -46,12 +46,14 @@
     padding: 10px;
 }
 .aparts {
+    
     background-color: white;
+    border-radius: 25px;
+    border: 5px solid #3f3f3f;
+    
+    padding: 20px;
     text-align: center;
     color: #3f3f3f;
-    border-radius: 25px;
-    border: 10px solid #3f3f3f;
-    padding: 20px;
 }
 .partscontainer {
     text-align: center;
@@ -60,8 +62,6 @@
     border: 5px solid #3f3f3f;
     padding: 10px;
 }
-
-
 img {
     margin: 0 auto;
 }
@@ -138,12 +138,12 @@ body {
     background-color: #201e1d;
     color: white;
 }
-.sectitle {
+.sectitle {/*
     border-radius: 25px;
+    border: 5px solid #3f3f3f;
+    background-color: white;*/
     color: #3f3f3f;
     text-align: center;
-    border: 5px solid #3f3f3f;
-    background-color: white;
 }
 .toptitle {
     border-radius: 25px;
@@ -164,7 +164,6 @@ body {
     background: #FFF !important;
     color: #000 !important;
 }
-
 .plantname {
     color: #f8831b;
 }
