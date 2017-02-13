@@ -37,9 +37,7 @@ class Welcome extends Application
         $countexpence = 0;
         $countrevenue = 0;
         
-        $dashboard = array();
-        
-		foreach ($sourceone as $record) {
+		foreach ($sourceone as $parts) {
             $countparts++;
         }
         
@@ -50,15 +48,17 @@ class Welcome extends Application
             $countbots++;
         }
         
-        $dashboard[] = array(
+        $dashboard = array(
             'totparts' => $countparts,
             'totbots' => $countbots,
             'earnings' => $countexpence,
             'expenses' => $countrevenue,
         );
         
-        $this->data['homepage'] = $dashboard;
-        
+        $this->data['totbots'] = $countbots;
+        $this->data['totparts'] = $countparts;
+        $this->data['earnings'] = $countrevenue;
+        $this->data['expenses'] = $countexpence;
 		$this->render();
 	}
 }
