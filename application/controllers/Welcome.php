@@ -26,15 +26,39 @@ class Welcome extends Application
 		$this->data['pagetitle'] = 'Homepage';
 		$this->data['pagebody'] = 'homepage';
         
-		$source = $this->part->all();
         
-		$count = 0;
+        $this->load->model('histories');
         
-		foreach ($source as $record) {
-            $count++;
+		$sourceone = $this->part->all();
+        $sourcetwo = $this->histories->all();
+        
+		$countparts = 0;
+        $countbots = 0;
+        $countexpence = 0;
+        $countrevenue = 0;
+        
+        $dashboard = array();
+        
+		foreach ($sourceone as $record) {
+            $countparts++;
         }
         
-		
+        foreach ($sourcetwo as $record)
+        {
+            $countexpence += $record['cost'];
+            $countrevenue += $record['revenue'];
+            $countbots++;
+        }
+        
+        $dashboard[] = array(
+            'totparts' => $countparts,
+            'totbots' => $countbots,
+            'earnings' => $countexpence,
+            'expenses' => $countrevenue,
+        );
+        
+        $this->data['homepage'] = $dashboard;
+        
 		$this->render();
 	}
 }
