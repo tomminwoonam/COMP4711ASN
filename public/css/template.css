@@ -8,11 +8,11 @@
 }
 .nav-tabs li a {
     /*navbar item colour - mobile*/
-    color: #f72f2f
+    color: #f72f2f;
 }
 .navbar {
     margin-bottom: 0;
-    /*navbar colour*/
+    /*navbar colour #201e1d*/
     background-color: #201e1d;
     border: 0;
     opacity: 0.9;
@@ -23,6 +23,7 @@
     color: white !important;
     margin-left: 20px !important;
     margin-right: 20px !important;
+    font-size: 18px;
 }
 .navbar-nav li a:hover {
     /*Navbar items hover colour*/
@@ -105,14 +106,14 @@ body {
 }
 .partimg {
     border-radius: 25px;
-    border: 5px solid  #91ff4f;
+    border: 5px solid #91ff4f;
     padding: 20px;
 }
 .titlediv {
     padding-top: 7%;
     padding-left: 40%;
-    background-color: #91ff4f;
-    color: #3f3f3f;
+    background-color: #201e1d;
+    color: white;
 }
 .sectitle {
     border-radius: 25px;
@@ -129,10 +130,13 @@ body {
     text-align: center;
 }
 .navbar-nav > li > .dropdown-menu {
-    background-color: #3f3f3f;
+    background-color: #201e1d;
 }
-
-.navbar-nav > li > .dropdown-menu a:hover{
-    background-color: #91ff4f;
-    color: #3f3f3f;
+.navbar-nav > li > .dropdown-menu a:hover {
+    background-color: black;
+}
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+    background: #FFF !important;
+    color: #000 !important;
 }
