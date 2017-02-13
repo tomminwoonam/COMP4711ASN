@@ -33,7 +33,7 @@ class History extends Application
         }
 
         $this->data['history'] = $history_list;
-
+        $this->data['ptitle'] = "History";
         $this->render();
     }
 }

@@ -1,11 +1,9 @@
-<h1>Part Detail: {partCode}</h1>
-
 <div class="container-fluid">
     <div class="col-sm-12">
-        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
+        <img class="img-responsive partimg" src="/img/parts/{partCode}.png" title="{partCode}">
     </div>
-    <div class="col-sm-12">
-        <table class="table table-hover" border="1">
+    <div class="col-sm-12 partdetail">
+        <table class="table table-responsive table-hover">
             <tbody>
                 <tr>
                     <td>Part code:</td>
