@@ -18,6 +18,5 @@
             <h4>Expenses</h4>
             <h3 class="homedashvalue">${expenses}</h3>
         </div>
-
     </div>
 </div>

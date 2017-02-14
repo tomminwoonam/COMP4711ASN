@@ -27,34 +27,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/index.php#home"><img src="/img/panda.png" width="100"></a>
+                    
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Dashboard</a></li>
                         <li><a href="/parts">Parts</a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/assembly">
-                            Assembly 
-                            <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/assembly">Robot Parts</a></li>
-                                <li><a href="/assembly#assembledbots">Assembled Robots</a></li>
-                            </ul>
+                        <li><a href="/assembly">Assembly</a>
                         </li>
                         <li><a href="/history">History</a></li>
                         <li class="disabled"><a href="">About</a></li>
+                        <li class="disabled navaccount"><a href="">Sign in</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <div class="container-fluid titlediv">
-            
-            <h1 class="ptitle">{ptitle}</h1></div>
-        
-        
-            {content}
-        
-        
+            <h1 class="ptitle">{ptitle}</h1>
+        </div>
+
+
+        {content}
+
+
         <footer id="footerucorp">
             <img src="/img/umbrellacorp.png" height="50">
         </footer>
