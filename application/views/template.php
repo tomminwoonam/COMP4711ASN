@@ -51,9 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <h1 class="ptitle">{ptitle}</h1></div>
         
-        <div class="container">
+        
             {content}
-        </div>
+        
         
         <footer id="footerucorp">
             <img src="/img/umbrellacorp.png" height="50">

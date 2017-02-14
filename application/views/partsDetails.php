@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container container-fluid">
     <div class="col-sm-12">
         <img class="img-responsive partimg" src="/img/parts/{partCode}.png" title="{partCode}">
     </div>
