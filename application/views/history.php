@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container container-fluid">
     <table class="table table-hover">
         <tr>
             <th>Activity Type</th>

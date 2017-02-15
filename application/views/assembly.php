@@ -1,4 +1,4 @@
-<div class="container-fluid partscontainers">
+<div class="container container-fluid partscontainers">
     <div  class="col-sm-12 toptitle"><h1 class="sectitle">Robot Parts</h1></div>
     <div class="col-sm-12">
         <!-- Top -->

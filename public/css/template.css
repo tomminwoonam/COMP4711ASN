@@ -12,7 +12,7 @@
 }
 .navbar {
     margin-bottom: 0;
-    /*navbar colour*/
+    /*navbar colour #201e1d;*/
     background-color: #201e1d;
     border: 0;
     opacity: 0.9;
@@ -21,16 +21,13 @@
 .navbar .navbar-brand {
     /*Navbar items colour*/
     color: white !important;
-    margin-left: 20px !important;
-    margin-right: 20px !important;
-    font-size: 18px;
+    font-size: 16px;
 }
 .navbar-nav li a:hover {
     /*Navbar items hover colour*/
     color: black;
 }
 .container {
-    padding-top: 10px;
     padding-bottom: 120px;
     min-height: 100%;
 }
@@ -41,26 +38,21 @@
     background-color: white;
     text-align: center;
     color: #3f3f3f;
-    border-radius: 25px;
-    border: 10px solid #3f3f3f;
+    border-radius: 15px;
+    border: 5px solid #3f3f3f;
     padding: 10px;
+    margin-top: 10px;
 }
 .aparts {
-    
     background-color: white;
     border-radius: 25px;
     border: 5px solid #3f3f3f;
-    
     padding: 20px;
     text-align: center;
     color: #3f3f3f;
 }
 .partscontainer {
     text-align: center;
-    background-color: #3f3f3f;
-    border-radius: 15px;
-    border: 5px solid #3f3f3f;
-    padding: 10px;
 }
 img {
     margin: 0 auto;
@@ -71,7 +63,6 @@ footer {
     text-align: right;
     color: white;
     height: 50px;
-    margin-top: -50px;
 }
 html,
 body {
@@ -131,6 +122,7 @@ body {
     border-radius: 45px;
     border: 5px solid #3f3f3f;
     padding: 20px;
+    margin-top: 10px;
 }
 .titlediv {
     padding-top: 7%;
@@ -138,7 +130,8 @@ body {
     background-color: #201e1d;
     color: white;
 }
-.sectitle {/*
+.sectitle {
+    /*
     border-radius: 25px;
     border: 5px solid #3f3f3f;
     background-color: white;*/
@@ -165,5 +158,11 @@ body {
     color: #000 !important;
 }
 .plantname {
+    color: #f8831b;
+}
+.navaccount {
+    border: 2px solid #f8831b;
+}
+a:hover {
     color: #f8831b;
 }

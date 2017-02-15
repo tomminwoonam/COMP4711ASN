@@ -1,4 +1,4 @@
-<div class=" container-fluid partscontainer">
+<div class="container container-fluid partscontainer">
     {parts}
     <div class="col-sm-4 parts">
         <a href="/parts/{id}">

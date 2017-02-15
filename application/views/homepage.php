@@ -1,4 +1,4 @@
-<div class="container-fluid homecontainer">
+<div class="container container-fluid homecontainer">
     <div class="col-sm-12">
         <div class="col-sm-6 graybox">
             <h4>Parts on hand</h4>
@@ -18,6 +18,5 @@
             <h4>Expenses</h4>
             <h3 class="homedashvalue">${expenses}</h3>
         </div>
-
     </div>
 </div>
