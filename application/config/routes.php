@@ -53,5 +53,6 @@ $route['default_controller'] = 'welcome';
 $route['parts'] = 'parts/index';
 $route['parts/(:num)'] = 'parts/details/$1';
 $route['history'] = "history/index";
+$route['manage'] = "manage/index";
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

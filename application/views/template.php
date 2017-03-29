@@ -27,17 +27,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/index.php#home"><img src="/img/panda.png" width="100"></a>
-                    
+
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Dashboard</a></li>
-                        <li><a href="/parts">Parts</a></li>
-                        <li><a href="/assembly">Assembly</a>
-                        </li>
+                        <li><a href="/manage">Manage</a></li>
+                        <li><a href="/part">Parts</a></li>
+                        <li><a href="/assembly">Assembly</a></li>
                         <li><a href="/history">History</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Roles<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#variables">Guest</a></li>
+                                <li><a href="#constants">Owner</a></li>
+                            </ul>
+                        </li>
                         <li class="disabled"><a href="">About</a></li>
-                        <li class="disabled navaccount"><a href="">Sign in</a></li>
                     </ul>
                 </div>
             </div>

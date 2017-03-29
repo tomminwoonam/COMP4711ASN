@@ -166,3 +166,17 @@ body {
 a:hover {
     color: #f8831b;
 }
+.center-it {
+    text-align: center;
+}
+.pad-top-bot {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.tab-item {
+    color: #201e1d;
+}
+.tab-item:hover § {
+    color: #201e1d;
+    color: #f8831b;
+}
