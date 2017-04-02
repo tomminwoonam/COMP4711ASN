@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Parts extends Application 
+class Part extends Application 
 {
 	function __construct()
 	{
@@ -21,7 +21,7 @@ class Parts extends Application
 		$this->data['pagetitle'] = 'Parts';
 		$this->data['pagebody'] = 'parts';
 		
-		$source = $this->part->all();
+		$source = $this->parts->all();
 		$parts_list = array();
 		
 		foreach ($source as $record)
@@ -70,7 +70,7 @@ class Parts extends Application
 		$this->data['pagetitle'] = 'Part Details';
 		$this->data['pagebody'] = 'partsDetails';
 		
-		$source = $this->part->get($id);
+		$source = $this->parts->get($id);
 		
 		$this->data['id'] = $source['id'];
 		$this->data['partCode'] = $source['partCode'];

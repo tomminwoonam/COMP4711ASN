@@ -6,7 +6,7 @@
  *London Burnaby Toronto New York Hong Kong
  * @author Tom
  */
-class Part extends CI_Model {
+class Parts extends CI_Model {
 	var $data = array(
 		array('id' => '1', 'partCode' => 'a1', 'buildLocation' => 'Vancouver', 
 		'dateTime' => '02-01-2017 10:54', 'CA' => '000000'),
@@ -66,3 +66,4 @@ class Part extends CI_Model {
 		return $this->data;
 	}
 }
+?>

@@ -29,7 +29,7 @@ class Welcome extends Application
         
         $this->load->model('histories');
         
-		$sourceone = $this->part->all();
+		$sourceone = $this->parts->all();
         $sourcetwo = $this->histories->all();
         
 		$countparts = 0;

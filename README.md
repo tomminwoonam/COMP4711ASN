@@ -11,4 +11,4 @@
 - Matthew Rosenlund **(Assembly Controller, Robots View, Assembly View)**
 - Amir Shayegh **(Homepage Controller, Homepage View, Consistency View)**
 
-**Assignment 1 Rubric: http://puu.sh/tWgMq/2b9b57c4bc.png**
+**Assignment 2 Rubric: http://puu.sh/v6ISy/4d7e5235c9.png**
