@@ -18,7 +18,7 @@ class Assembly extends Application
 	 */
 	public function index()
 	{
-        $this->load->model('robots');
+        //$this->load->model('robots');
 
 		$this->data['pagetitle'] = 'Assembly';
 		$this->data['pagebody'] = 'assembly';
@@ -26,7 +26,7 @@ class Assembly extends Application
         /**
          * Get Parts
          */
-		$source = $this->part->all();
+		$source = $this->parts->all();
 		$torso_parts = array();
 		$top_parts = array();
 		$bottom_parts = array();

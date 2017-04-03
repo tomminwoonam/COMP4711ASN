@@ -5,7 +5,7 @@
 <div class="container container-fluid partscontainer">
     {parts}
     <div class="col-sm-4 parts">
-        <a href="/parts/{id}">
+        <a href="/part/{id}">
             <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
         </a>
         <h5>Part type: {partType}</h5>
