@@ -116,9 +116,6 @@
 					<td>
 						<h3>Parts Used</h3>
 					</td>
-					<td>
-						<h3>Select</h3>
-					</td>
 				</tr>
 				{robots}
 				<tr class="aparts">
@@ -155,15 +152,9 @@
 							</tr>
 						</table>
 					</td>
-					<td class="assembly-td" style="width:10%">
-						<input type="checkbox" name="botInfo[]" value="{id} {botCode} {topCode} {torsoCode} {bottomCode}" />
-					</td>
 				</tr>
 				{/robots}
 			</table>
-		</div>
-		<div class="col-sm-12">
-			<input id="BotShip" type="submit" class="btn btn-success btn-block" name="submit" value="Ship to Head Office" />
 		</div>
 	</form>
 </div>
