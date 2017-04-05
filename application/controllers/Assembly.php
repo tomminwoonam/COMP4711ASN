@@ -45,13 +45,16 @@ class Assembly extends Application
         //Get Parts
 		$this->loadParts();
 		
-        //Get robots
+        //Get Robots
 		$this->loadBots();
 		
 		$this->data['ptitle'] = "<span class=\"glyphicon glyphicon-wrench\"></span>Assembly";
 		$this->render();
 	}
-	
+    
+	/**
+	 * function that build a bot out of parts sent by POST.
+	 */
 	function buildBot()
 	{
 		$results[] = array('output' => "Built Bot with parts:");
@@ -128,6 +131,10 @@ class Assembly extends Application
 		return $results;
 	}
 	
+    
+	/**
+	 * function that returns list of parts sent by POST.
+	 */
 	function returnPart()
 	{
 		$results[] = array('output' => "Returned parts:");
@@ -169,10 +176,16 @@ class Assembly extends Application
 			}
 		}
 		
+        //Get apiKey
+        $secretApi = $this->secrets->get(0);
+        $apiKey = $secretApi->value;
+        
 		//Return parts selected
 		for($i = 0; $i < count($partToReturn); $i++)
 		{
-			$reply = file_get_contents('https://umbrella.jlparry.com/work/recycle/'.$partToReturn[$i]['caCode'].'?key=4621cf');
+			$reply = file_get_contents('https://umbrella.jlparry.com/work/recycle/'.
+                                       $partToReturn[$i]['caCode'].
+                                       '?key='.$apiKey);
 			$amount = explode(" ", $reply);
 			
 			//Remove part form parts list
@@ -191,62 +204,11 @@ class Assembly extends Application
 		
 		return $results;
 	}
-    
-    function shipRobot()
-    {
-        $results[] = array('output' => "Ship to Head Office");
-        //Find what the bots parts are
-        if(!empty($_POST['botInfo']))
-        {
-            foreach($_POST['botInfo'] as $botInfo)
-            {
-                $bot = explode(" ", $botInfo);
-                $results[] = array('output' => 
-                                   "id: ".$bot[0].", botCode: ".$bot[1].
-                                   ", topCode: ".$bot[2]. ", torsoCode: ".$bot[3].
-                                   ", bottomCode: ".$bot[4]);
-
-            //Ship the robot to Umbrella Corp
-                $reply = file_get_contents('https://umbrella.jlparry.com/work/buymybot/'.$bot[2].'/'.$bot[3].'/'.$bot[4].'?key=4621cf');
-                $amount = explode(" ", $reply);
-
-                $results[] = array('output' => "sold ".$bot[1]." for $".$amount[1].".");
-
-                //Remove parts from robot from parts list
-                $threeIsDone = 0;
-                foreach ($this->parts->all() as $part)
-                {
-                    if ($part->caCode == $bot[2] || $part->caCode == $bot[3] || $part->caCode == $bot[4])
-                    {
-                        $threeIsDone++;
-                        $this->parts->delete($part->id);
-                        if($threeIsDone >= 3)
-                            break;
-                    }
-                }
-
-                //Remove robot from robot list
-                $this->robots->delete($bot[0]);
-
-                //Record the shipment in history
-                $newHistory = $this->histories->create();
-
-                $newHistory->id = $this->histories->size();
-                $newHistory->transactionType = "Shipped Robot ".$bot[1];
-                $newHistory->value = $amount[1];
-                $newHistory->dateTime = $date = date('Y-m-d');
-
-                $this->histories->add($newHistory);
-            }
-        }
-        else
-        {
-            $results[] = array('output' => "No robot selected!");
-        }
-            
-        return $results;
-    }
 	
+    
+	/**
+	 * function that loads list of parts that can be used to make a bot.
+	 */
 	function loadParts()
 	{
 		$torso_parts = array();
@@ -306,6 +268,10 @@ class Assembly extends Application
         $this->data['bottom'] = $bottom_parts;
 		
 	}
+    
+	/**
+	 * function that loads list of bots that are currently held.
+	 */
 	function loadBots()
 	{
         $robots = array();
@@ -316,5 +282,6 @@ class Assembly extends Application
 							  'bottomId' => $bot->bottomId, 'bottomCode' => $bot->bottomCode);
         }
         $this->data['robots'] = $robots;
+        
 	}
 }
