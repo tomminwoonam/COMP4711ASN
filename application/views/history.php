@@ -2,8 +2,7 @@
     <table class="table table-hover">
         <tr>
             <th>Activity Type</th>
-            <th>Cost</th>
-            <th>Revenue</th>
+            <th>Value</th>
             <th>Activity Date</th>
         </tr>
         {history}
@@ -12,10 +11,7 @@
                 {historyType}
             </td>
             <td>
-                {cost}
-            </td>
-            <td>
-                {revenue}
+                {value}
             </td>
             <td>
                 {dateTime}
