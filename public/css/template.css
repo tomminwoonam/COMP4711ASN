@@ -12,90 +12,171 @@
 }
 .navbar {
     margin-bottom: 0;
-    /*navbar colour*/
-    background-color: white;
+    /*navbar colour #201e1d;*/
+    background-color: #201e1d;
     border: 0;
-    font-size: 20px !important;
     opacity: 0.9;
 }
 .navbar li a,
 .navbar .navbar-brand {
     /*Navbar items colour*/
-    color: #f72f2f !important;
-    margin-left:20px !important;
-    margin-right:20px !important;  
+    color: white !important;
+    font-size: 16px;
 }
 .navbar-nav li a:hover {
     /*Navbar items hover colour*/
-    color: black!important;
+    color: black;
 }
 .container {
-    padding: 80px 120px;
+    padding-bottom: 120px;
     min-height: 100%;
 }
+.ptitle {
+    text-align: center;
+}
 .parts {
-    color: #5e5c5b;
+    background-color: white;
+    text-align: center;
+    color: #3f3f3f;
+    border-radius: 15px;
+    border: 5px solid #3f3f3f;
+    padding: 10px;
+    margin-top: 10px;
+}
+.aparts {
+    background-color: white;
+    border-radius: 25px;
+    border: 5px solid #3f3f3f;
+    padding: 20px;
+    text-align: center;
+    color: #3f3f3f;
+}
+.partscontainer {
     text-align: center;
 }
 img {
     margin: 0 auto;
 }
 footer {
-    background-color: black;
+    background-color: #201e1d;
+    opacity: 0.9;
     text-align: right;
     color: white;
     height: 50px;
-    margin-top: -50px;
 }
 html,
 body {
     height: 100%;
-    margin: 0;
+    margin: auto;
     padding: 0;
     /*content text colour*/
     color: #5e5c5b;
     background-color: white;
 }
+.homecontainer {
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid white;
+    padding: 10px;
+}
 .redbox {
-    background-color: #c97979;
-    color: white;
-    border-radius: 25px;
-    /*border: 2px solid #f72f2f;*/
-    padding: 20px;
+    background-color: #ff4f4f;
+    color: #3f3f3f;
+    border-radius: 50px;
+    border: 8px solid white;
+    padding: 50px;
 }
 .greenbox {
-    background-color:#6fcf96 ;
-    color: white;
-    border-radius: 25px;
-    /*border: 2px solid #37dd7b;*/
-    padding: 20px;
+    background-color: #91ff4f;
+    color: #3f3f3f;
+    border-radius: 45px;
+    border: 8px solid white;
+    padding: 50px;
 }
 .graybox {
-    background-color: #b4b4b3;
+    background-color: #3f3f3f;
     color: white;
-    border-radius: 25px;
-    /*border: 2px solid #5e5c5b;*/
-    padding: 20px;
+    border-radius: 45px;
+    border: 8px solid white;
+    padding: 50px;
 }
 .bluebox {
-    background-color: #8db8e4;
-    color: white;
-    border-radius: 25px;
-    /*border: 2px solid #2f92f7;*/
-    padding: 20px;
+    background-color: #4f9aff;
+    color: #3f3f3f;
+    border-radius: 45px;
+    border: 8px solid white;
+    padding: 50px;
 }
-.assembly-header{
+.assembly-header {
     text-align: center;
     width: 100%;
 }
-
-.assembly-td
-{
+.assembly-td {
     text-align: center;
     width: 50%;
 }
-
-.button {
-    display: block;
-    width: 100%;
+.partdetail {
+    padding-top: 50px;
+}
+.partimg {
+    border-radius: 45px;
+    border: 5px solid #3f3f3f;
+    padding: 20px;
+    margin-top: 10px;
+}
+.titlediv {
+    padding-top: 7%;
+    padding-left: 40%;
+    background-color: #201e1d;
+    color: white;
+}
+.sectitle {
+    /*
+    border-radius: 25px;
+    border: 5px solid #3f3f3f;
+    background-color: white;*/
+    color: #3f3f3f;
+    text-align: center;
+}
+.toptitle {
+    border-radius: 25px;
+    padding: 0;
+    padding-top: 0;
+}
+.homedashvalue {
+    text-align: center;
+}
+.navbar-nav > li > .dropdown-menu {
+    background-color: #201e1d;
+}
+.navbar-nav > li > .dropdown-menu a:hover {
+    background-color: black;
+}
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+    background: #FFF !important;
+    color: #000 !important;
+}
+.plantname {
+    color: #f8831b;
+}
+.navaccount {
+    border: 2px solid #f8831b;
+}
+a:hover {
+    color: #f8831b;
+}
+.center-it {
+    text-align: center;
+}
+.pad-top-bot {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.tab-item {
+    color: #201e1d;
+}
+.tab-item:hover § {
+    color: #201e1d;
+    color: #f8831b;
 }

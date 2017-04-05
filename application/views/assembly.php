@@ -1,114 +1,99 @@
-<h1>Assembly</h1>
-
-<div class="row">
-    <table cellpadding="3" cellspacing="3" width="100%" border="2">
+<div class="container container-fluid partscontainers">
+    <div  class="col-sm-12 toptitle"><h1 class="sectitle">Robot Parts</h1></div>
+    <div class="col-sm-12">
         <!-- Top -->
-        <td>
-            <table width="100%">
+        <div class="col-sm-4">
+            <table class="table table-responsive">
                 <thead>
-                    <th class="assembly-header" colspan="3" >
-                        Torso
+                    <th class="assembly-header">
+                        <h3>Torso</h3>
                     </th>
                 </thead>
                 {torso}
-                <tr>
-                    <td class="assembly-td">
-                        <img class="img-responsive" src="/img/parts/{partCode}.jpeg" title="{partCode}">
+                <tr class="aparts">
+                    <td>
+                        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
-                    <td class="assembly-td">
-                        <input type="checkbox" name="torso" value="{id}"
+                    <td>
+                        <input type="checkbox" name="torso" value="{id}">
                     </td>
                 </tr>
                 {/torso}
             </table>
-        </td>
+        </div>
         <!-- Torso -->
-        <td>
-            <table width="100%">
+        <div class="col-sm-4">
+            <table class="table table-responsive">
                 <thead>
-                <th class="assembly-header" colspan="3">
-                    Top
-                </th>
+                    <th class="assembly-header">
+                        <h3>Top</h3>
+                    </th>
                 </thead>
                 {top}
-                <tr>
-                    <td width="50%">
-                        <img class="img-responsive" src="/img/parts/{partCode}.jpeg" title="{partCode}">
+                <tr class="aparts">
+                    <td>
+                        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
-                    <td class="assembly-td">
-                        <input type="checkbox" name="top" value="{id}"
-                    </td>
+                    <td >
+                        <input type="checkbox" name="top" value="{id}" </td>
                 </tr>
                 {/top}
             </table>
-        </td>
+        </div>
         <!-- Legs -->
-        <td>
-            <table width="100%">
+        <div class="col-sm-4">
+            <table class="table table-responsive">
                 <thead>
-                <th class="assembly-header" colspan="3">
-                    Bottom
-                </th>
+                    <th class="assembly-header">
+                        <h3>Bottom</h3>
+                    </th>
                 </thead>
                 {bottom}
-                <tr>
-                    <td width="50%">
-                        <img class="img-responsive" src="/img/parts/{partCode}.jpeg" title="{partCode}">
+                <tr class="aparts">
+                    <td>
+                        <img class="img-responsive" src="/img/parts/{partCode}.png" title="{partCode}">
                     </td>
-                    <td class="assembly-td">
-                        <input type="checkbox" name="bottom" value="{id}"
-                    </td>
+                    <td>
+                        <input type="checkbox" name="bottom" value="{id}" </td>
                 </tr>
                 {/bottom}
             </table>
-        </td>
-    </table>
-
-    <div class="row">
-        <table width="100%" style="align-content: center">
-            <tr>
-                <td width="50%">
-                    <button type="button" class="button">Build It</button>
-                </td>
-                <td width="50%">
-                    <button type="button" class="button">Return to Head Office</button>
-                </td>
-            </tr>
-        </table>
+        </div>
     </div>
-
-    <h1>Assembled Robots</h1>
-    <div class="row" >
-        <table width="50%">
+    <div class="col-sm-12" id="assembledbots">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-info btn-block">Build It</button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-danger btn-block">Return to Head Office</button>
+        </div>
+    </div>
+    <div  class="col-sm-12"><h1 class="sectitle">Assembled Robots</h1></div>
+    <div class="col-sm-12 assembled">
+        <table class="table table-responsive">
             {robots}
-            <tr>
-                <td class="assembly-td">
-                    <table>
+            <tr class="aparts">
+                <td>
+                    <table class="table table-responsive">
                         <tr>
-                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{topId}.jpeg" title="{partCode}">
+                            <img style="height:50%" src="/img/parts/{topId}.png" title="{partCode}">
                         </tr>
                         <tr>
-                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{bottomId}.jpeg" title="{partCode}">
+                            <img style="height:50%" src="/img/parts/{bottomId}.png" title="{partCode}">
                         </tr>
                         <tr>
-                            <img class="img-responsive"  style="width:25%;height:25%;" src="/img/parts/{torsoId}.jpeg" title="{partCode}">
+                            <img style="height:50%" src="/img/parts/{torsoId}.png" title="{partCode}">
                         </tr>
                     </table>
                 </td>
                 <td class="assembly-td">
-                    <input type="checkbox" name="torso" value="{id}"
-                </td>
+                    <input type="checkbox" name="torso" value="{id}" </td>
             </tr>
             {/robots}
         </table>
     </div>
-    <div class="row">
-        <table width="100%" style="align-content: center">
-            <tr>
-                <td width="100%">
-                    <button type="button" class="button">Ship to Head Office</button>
-                </td>
-            </tr>
-        </table>
+    <div class="col-sm-12">
+        <button type="button" class="btn btn-success btn-block">Ship to Head Office</button>
+
     </div>
 </div>

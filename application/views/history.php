@@ -1,12 +1,10 @@
-<h1>History</h1>
-
-<div class="container-fluid">
+<div class="container container-fluid">
     <table class="table table-hover">
         <tr>
-        <th>Activity Type</th>
+            <th>Activity Type</th>
             <th>Cost</th>
             <th>Revenue</th>
-        <th>Activity Date</th>
+            <th>Activity Date</th>
         </tr>
         {history}
         <tr>
