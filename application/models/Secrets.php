@@ -1,8 +1,9 @@
 <?php
+
 /**
  * This is a "CMS" model for secret values, using MY_Model for connectivity with our sql database.
  *
- * @author Tom
+ * @author Amir
  */
 class Secrets extends MY_Model {
 	// Constructor

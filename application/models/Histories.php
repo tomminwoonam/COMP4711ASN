@@ -1,8 +1,7 @@
 <?php
+
 /**
- * This is a "CMS" model for previous history, but with bogus hard-coded data,
- * so that we don't have to worry about any database setup.
- * This is a mock database model.
+ * This is a "CMS" model for previous history, using MY_Model for connectivity with our sql database.
  *
  * @author Ntori
  */

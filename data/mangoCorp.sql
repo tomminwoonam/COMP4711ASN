@@ -90,36 +90,7 @@ CREATE TABLE `secrets` (
 --
 
 INSERT INTO `secrets` (`id`, `type`, `value`) VALUES
-(0, 'apiKey', '??????'),
+(0, 'apiKey', '23e085'),
 (1, 'partsCount', '0'),
 (2, 'botCount', '0'),
-(3, 'token', '1c96d5');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `histories`
---
--- ALTER TABLE `histories`
---    ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `parts`
---
--- ALTER TABLE `parts`
---   ADD PRIMARY KEY (`id`),
---   ADD UNIQUE KEY `caCode` (`caCode`);
-
---
--- Indexes for table `robots`
---
--- ALTER TABLE `robots`
---   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `secrets`
---
--- ALTER TABLE `secrets`
---   ADD PRIMARY KEY (`id`);
+(3, 'token', '654321');
