@@ -58,6 +58,20 @@ class Assembly extends Application
 		
 		$this->data['ptitle'] = "<span class=\"glyphicon glyphicon-wrench\"></span>Assembly";
         
+        //Check if in Supservisor mode
+        $role = $this->session->userdata('userrole');
+        
+        if($role == 'supervisor' || $role == 'owner')
+        {
+            $this->data['buildBot'] = '<input id="buildBot" type="submit" class="btn btn-info btn-block" name="submit" value="Build Bot" />';
+            $this->data['returnPart'] = '<input id="return" type="submit" class="btn btn-danger btn-block" name="submit" value="Return to Head Office" />';
+        }
+        else
+        {
+            $this->data['buildBot'] = "";
+            $this->data['returnPart'] = "";
+        }
+        
 		$this->render();
 	}
     
