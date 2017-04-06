@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * This is the controller for the Part page.
+ * This uses the Parts model to populate page data,
+ * uses Secrets model to connect to the PCR to build/ buy parts,
+ * and uses Histories model to add the parts built/ boxes bought.
+ *
+ * @author Matt
+ */
 class Part extends Application 
 {
 	function __construct()
@@ -116,7 +124,6 @@ class Part extends Application
         foreach ($parts as $part) {
             $newPart = $this->parts->create();
 
-            $newPart->id = $this->parts->size();
             $newPart->caCode = $part['id'];
             $newPart->model = $part['model'];
             $newPart->piece = $part['piece'];
@@ -128,7 +135,6 @@ class Part extends Application
             
             $newHistory = $this->histories->create();
 
-            $newHistory->id = $this->histories->size();
             $newHistory->transactionType = "Built Part ".$newPart->caCode;
             $newHistory->value = 0;
             $newHistory->dateTime = $date = date('Y-m-d');
@@ -147,11 +153,14 @@ class Part extends Application
         //Request the new parts
         $parts = file_get_contents('https://umbrella.jlparry.com/work/buybox?key='.
                                    $apiKey);
+        if($parts == "Oops: you can't afford that!")
+        {
+            redirect('/part');
+        }
         $parts = json_decode($parts, true);
 
         $newHistory = $this->histories->create();
 
-        $newHistory->id = $this->histories->size();
         $newHistory->transactionType = "Buy Box";
         $newHistory->value = -100;
         $newHistory->dateTime = $date = date('Y-m-d');
@@ -161,7 +170,6 @@ class Part extends Application
         foreach ($parts as $part) {
             $newPart = $this->parts->create();
 
-            $newPart->id = $this->parts->size();
             $newPart->caCode = $part['id'];
             $newPart->model = $part['model'];
             $newPart->piece = $part['piece'];

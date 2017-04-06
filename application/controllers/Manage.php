@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * This is the controller for the Assembly page.
+ * This uses the Secrets, Robots models to populate page data,
+ * uses Secrets model to connect to the PCR to sell robots,
+ * and uses Histories model to add robot sales.
+ *
+ * @author Amir
+ */
 class Manage extends Application 
 {
 	function __construct()
@@ -37,7 +45,7 @@ class Manage extends Application
 				case "Reboot Me":
 					$results = $this->rebootMe();
 					break;
-				default;
+                default:
 					$results[] = array('output' => "WTF happend?");
 			}
 		}
@@ -108,7 +116,6 @@ class Manage extends Application
                 //Record the shipment in history
                 $newHistory = $this->histories->create();
 
-                $newHistory->id = $this->histories->size();
                 $newHistory->transactionType = "Shipped Robot ".$bot[1];
                 $newHistory->value = $amount[1];
                 $newHistory->dateTime = $date = date('Y-m-d');
@@ -134,16 +141,18 @@ class Manage extends Application
 	 */
     function registerMe()
     {
-        //Get the token
+        //Get the token and plant name
         $secrets = $this->secrets->get(3);
         $type[] = $secrets->type;
         $token = $secrets->value;
+        $plantSecret = $this->secrets->get(4);
+        $plantName = $plantSecret->value;
         
         //Check inputed token
         if($_POST['registerTokenCheck'] == $token)
         {
-            $reply = file_get_contents('https://umbrella.jlparry.com/work/registerme/mango/'.
-                                       $token);
+            $reply = file_get_contents('https://umbrella.jlparry.com/work/registerme/'.
+                                       $plantName.'/'.$token);
             $response = explode(" ", $reply);
 
             if($response[0] == "Ok")
@@ -189,13 +198,39 @@ class Manage extends Application
                                        $apiKey);
             $response = explode(" ", $reply);
 
-            if($response[0] == "Ok"  && $response != null)
+            if($response[0] == "Ok")
             {
-                //Change stored api value
-                $secretApi = $this->secrets->get(0);
-                $secretApi->value = $response[1];
-                $this->secrets->update($secretApi);
-                $results[] = array('output' => "Used ".$type[0].$token." and changed the ".$secretApi->type." to: ".$response[1]);
+                $results[] = array('output' => "Used ".$apiKey." and rebooted on the PRC.");
+                
+                //Delete all values in all tables (reboot the server)
+                foreach($this->histories->all() as $record)
+                {
+                    if($record->id != "")
+                    {
+                        $this->histories->delete($record->id);
+                    }
+                }
+                foreach($this->parts->all() as $part)
+                {
+                    if($part->id != "")
+                    {
+                        $this->parts->delete($part->id);
+                    }
+                }
+                foreach($this->robots->all() as $bot)
+                {
+                    if($bot->id != "")
+                    {
+                        $this->robots->delete($bot->id);
+                    }
+                }
+                $partSecret = $this->secrets->get(1);
+                $partSecret->value = strval(0);
+                $this->secrets->update($partSecret);
+                $botSecret  = $this->secrets->get(2);
+                $botSecret->value = strval(0);
+                $this->secrets->update($botSecret);
+                
             }
             else
             {
@@ -213,6 +248,7 @@ class Manage extends Application
     
     /**
 	 * function that loads list of info the BOSS uses.
+     http://umbrella.jlparry.com/info/scoop/mango use if you have time!
 	 */
     function loadSettings()
     {
