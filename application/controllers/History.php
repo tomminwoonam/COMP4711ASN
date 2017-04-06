@@ -1,6 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * This is the controller for the History page.
+ * This uses Histories model to populate page data.
+ *
+ * @author Amir
+ */
 class History extends Application
 {
     function __construct()

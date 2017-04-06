@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * This is the controller for the Part page.
+ * This uses the Parts model to populate page data,
+ * uses Secrets model to connect to the PCR to build/ buy parts,
+ * and uses Histories model to add the parts built/ boxes bought.
+ *
+ * @author Matt
+ */
 class Part extends Application 
 {
 	function __construct()
@@ -16,7 +24,7 @@ class Part extends Application
 	 *	- or -
 	 * 		http://example.com/Part/index
 	 */
-	public function index()
+	public function index($result = null)
 	{
 		$this->data['pagetitle'] = 'Parts';
 		$this->data['pagebody'] = 'parts';
@@ -24,6 +32,7 @@ class Part extends Application
         $source = array();
         $val = 0;
         
+        //Get list of parts and populate table
         foreach($this->parts->all() as $part)
         {
             if($part->used == 0)
@@ -75,8 +84,17 @@ class Part extends Application
                                   'partType' => $partType, 'caCode' => $part->caCode, 
                                   'modelType' => $modelType);
         }
+        
+        $results = array();
+        if($result != null)
+        {
+            $results[] = $result;
+        }
+        
+        $this->data['results'] = $results;
 		$this->data['parts'] = $parts_list;
 		$this->data['ptitle'] = "Parts<span class=\"glyphicon glyphicon-tag\"></span>";
+        
 		$this->render();
 	}
 	
@@ -113,10 +131,11 @@ class Part extends Application
                                    $apiKey);
         $parts = json_decode($parts, true);
 
+        $numBuilt = 0;
+        $modelPiece = "??";
         foreach ($parts as $part) {
             $newPart = $this->parts->create();
 
-            $newPart->id = $this->parts->size();
             $newPart->caCode = $part['id'];
             $newPart->model = $part['model'];
             $newPart->piece = $part['piece'];
@@ -128,14 +147,25 @@ class Part extends Application
             
             $newHistory = $this->histories->create();
 
-            $newHistory->id = $this->histories->size();
             $newHistory->transactionType = "Built Part ".$newPart->caCode;
             $newHistory->value = 0;
             $newHistory->dateTime = $date = date('Y-m-d');
 
             $this->histories->add($newHistory);
+            
+            if($numBuilt == 0)
+            {
+                $modelPiece = $newPart->model.$newPart->piece;
+            }
+            $numBuilt++;
         }
-        redirect('/part');
+        
+        if($numBuilt > 0)
+            $results = array('output' => "Built ".$numBuilt." ".$modelPiece." parts.");
+        else
+            $results = array('output' => "Built ".$numBuilt." parts.");
+        
+        $this->index($results);
     }
     
     public function buyBox()
@@ -147,11 +177,15 @@ class Part extends Application
         //Request the new parts
         $parts = file_get_contents('https://umbrella.jlparry.com/work/buybox?key='.
                                    $apiKey);
+        if($parts == "Oops: you can't afford that!")
+        {
+            $results = array('output' => "Could not buy a box.");
+            $this->index($results);
+        }
         $parts = json_decode($parts, true);
 
         $newHistory = $this->histories->create();
 
-        $newHistory->id = $this->histories->size();
         $newHistory->transactionType = "Buy Box";
         $newHistory->value = -100;
         $newHistory->dateTime = $date = date('Y-m-d');
@@ -161,7 +195,6 @@ class Part extends Application
         foreach ($parts as $part) {
             $newPart = $this->parts->create();
 
-            $newPart->id = $this->parts->size();
             $newPart->caCode = $part['id'];
             $newPart->model = $part['model'];
             $newPart->piece = $part['piece'];
@@ -171,6 +204,9 @@ class Part extends Application
 
             $this->parts->add($newPart);
         }
-        redirect('/part');
+        
+        $results = array('output' => "Bought a box.");
+        
+        $this->index($results);
     }
 }

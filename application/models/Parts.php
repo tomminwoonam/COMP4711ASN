@@ -1,10 +1,9 @@
 <?php
+
 /**
- * This is a "CMS" model for robot parts, but with bogus hard-coded data,
- * so that we don't have to worry about any database setup.
- * This is a mock database model.
- *London Burnaby Toronto New York Hong Kong
- * @author Tom
+ * This is a "CMS" model for robot parts, using MY_Model for connectivity with our sql database.
+ *
+ * @author Matt
  */
 class Parts extends MY_Model {
 	// Constructor
