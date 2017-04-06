@@ -25,17 +25,6 @@ class Application extends CI_Controller
 		$this->data = array ();
 		$this->data['pagetitle'] = 'Quotes CMS';
 		$this->data['ci_version'] = (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>'.CI_VERSION.'</strong>' : '';
-        
-        $role = $this->session->userdata('userrole');
-        
-        if($role == 'owner')
-        {
-            $this->data['manageTab'] = "<li><a href=\"\manage\">Manage</a></li>";
-        }
-        else
-        {
-            $this->data['manageTab'] = "";
-        }
 	}
 
 	/**
