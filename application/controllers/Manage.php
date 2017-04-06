@@ -56,7 +56,8 @@ class Manage extends Application
         
         //Get Robots
         $this->loadBots();
-            
+        
+        
 		$this->data['ptitle'] = "Manage<span class=\"glyphicon glyphicon-tag\"></span>";
         $this->render();
     }
@@ -66,7 +67,6 @@ class Manage extends Application
 	 */
     function sellRobot()
     {
-		$results[] = array('output' => "Robot sold:");
         if(!empty($_POST['botInfo']))
         {
             //Get API key
@@ -200,7 +200,7 @@ class Manage extends Application
 
             if($response[0] == "Ok")
             {
-                $results[] = array('output' => "Used ".$apiKey." and rebooted on the PRC.");
+                $results[] = array('output' => "Used ".$apiKey." and rebooted.");
                 
                 //Delete all values in all tables (reboot the server)
                 foreach($this->histories->all() as $record)

@@ -24,7 +24,7 @@ class Part extends Application
 	 *	- or -
 	 * 		http://example.com/Part/index
 	 */
-	public function index()
+	public function index($result = null)
 	{
 		$this->data['pagetitle'] = 'Parts';
 		$this->data['pagebody'] = 'parts';
@@ -32,6 +32,7 @@ class Part extends Application
         $source = array();
         $val = 0;
         
+        //Get list of parts and populate table
         foreach($this->parts->all() as $part)
         {
             if($part->used == 0)
@@ -83,8 +84,17 @@ class Part extends Application
                                   'partType' => $partType, 'caCode' => $part->caCode, 
                                   'modelType' => $modelType);
         }
+        
+        $results = array();
+        if($result != null)
+        {
+            $results[] = $result;
+        }
+        
+        $this->data['results'] = $results;
 		$this->data['parts'] = $parts_list;
 		$this->data['ptitle'] = "Parts<span class=\"glyphicon glyphicon-tag\"></span>";
+        
 		$this->render();
 	}
 	
@@ -121,6 +131,8 @@ class Part extends Application
                                    $apiKey);
         $parts = json_decode($parts, true);
 
+        $numBuilt = 0;
+        $modelPiece = "??";
         foreach ($parts as $part) {
             $newPart = $this->parts->create();
 
@@ -140,8 +152,20 @@ class Part extends Application
             $newHistory->dateTime = $date = date('Y-m-d');
 
             $this->histories->add($newHistory);
+            
+            if($numBuilt == 0)
+            {
+                $modelPiece = $newPart->model.$newPart->piece;
+            }
+            $numBuilt++;
         }
-        redirect('/part');
+        
+        if($numBuilt > 0)
+            $results = array('output' => "Built ".$numBuilt." ".$modelPiece." parts.");
+        else
+            $results = array('output' => "Built ".$numBuilt." parts.");
+        
+        $this->index($results);
     }
     
     public function buyBox()
@@ -155,7 +179,8 @@ class Part extends Application
                                    $apiKey);
         if($parts == "Oops: you can't afford that!")
         {
-            redirect('/part');
+            $results = array('output' => "Could not buy a box.");
+            $this->index($results);
         }
         $parts = json_decode($parts, true);
 
@@ -179,6 +204,9 @@ class Part extends Application
 
             $this->parts->add($newPart);
         }
-        redirect('/part');
+        
+        $results = array('output' => "Bought a box.");
+        
+        $this->index($results);
     }
 }

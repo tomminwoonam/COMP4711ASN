@@ -57,6 +57,7 @@ class Assembly extends Application
 		$this->loadBots();
 		
 		$this->data['ptitle'] = "<span class=\"glyphicon glyphicon-wrench\"></span>Assembly";
+        
 		$this->render();
 	}
     
