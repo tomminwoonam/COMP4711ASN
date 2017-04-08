@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * This is the controller for the Assembly page.
+ * This uses the Secrets, Robots models to populate page data,
+ * uses Secrets model to connect to the PCR to sell robots,
+ * and uses Histories model to add robot sales.
+ *
+ * @author Tom
+ */
 class Welcome extends Application 
 {
 	function __construct()
@@ -26,41 +34,38 @@ class Welcome extends Application
 		$this->data['pagetitle'] = 'Homepage';
 		$this->data['pagebody'] = 'homepage';
         
-        
-        $this->load->model('histories');
-        
-		$sourceone = $this->parts->all();
-        $sourcetwo = $this->histories->all();
-        
-		$countparts = 0;
-        $countbots = 0;
-        $countexpence = 0;
-        $countrevenue = 0;
-        
-		foreach ($sourceone as $parts) {
-            $countparts++;
-        }
-        
-        foreach ($sourcetwo as $record)
+		//Initialize variables to store needed info
+		$partsOnHand = 0;
+        $totBotsBuilt = 0;
+        $earnings = 0;
+        $expenses = 0;
+		
+		//Get the needed database data
+		$partsCount = $this->parts->size();
+		$partsOnHand = $partsCount;
+		
+		$curBotNumber = $this->secrets->get(2);
+		$totBotsBuilt = $curBotNumber->value;
+		
+        foreach ($this->histories->all() as $record)
         {
-            $countexpence += $record['cost'];
-            $countrevenue += $record['revenue'];
-            $countbots++;
+            if ($record->value > 0)
+			{
+				$earnings += $record->value;
+			}
+			else if ($record->value < 0)
+			{
+				$expenses -= $record->value;
+			}
         }
+		
+		//Load data to the view
+        $this->data['totparts'] = $partsOnHand;
+        $this->data['totbots'] = $totBotsBuilt;
+        $this->data['earnings'] = $earnings;
+        $this->data['expenses'] = $expenses;
         
-        $dashboard = array(
-            'totparts' => $countparts,
-            'totbots' => $countbots,
-            'earnings' => $countexpence,
-            'expenses' => $countrevenue,
-        );
-        
-        $this->data['totbots'] = $countbots;
-        $this->data['totparts'] = $countparts;
-        $this->data['earnings'] = $countrevenue;
-        $this->data['expenses'] = $countexpence;
-        
-        $this->data['ptitle'] = "<span class=\"plantname\">Mango Palnt</span> Dashboard <span class=\"glyphicon glyphicon-dashboard\"></span>";
+        $this->data['ptitle'] = "<span class=\"plantname\">Mango Plant</span> Dashboard <span class=\"glyphicon glyphicon-dashboard\"></span>";
 		$this->render();
 	}
 }

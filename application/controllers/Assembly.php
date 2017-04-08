@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * This is the controller for the Assembly page.
+ * This uses the Parts, Robots models to populate page data,
+ * uses Secrets model to connect to the PCR to return parts,
+ * and uses Histories model to add robot builds.
+ *
+ * @author Matt
+ */
 class Assembly extends Application 
 {
 	function __construct()
@@ -49,6 +57,7 @@ class Assembly extends Application
 		$this->loadBots();
 		
 		$this->data['ptitle'] = "<span class=\"glyphicon glyphicon-wrench\"></span>Assembly";
+        
 		$this->render();
 	}
     
@@ -105,10 +114,14 @@ class Assembly extends Application
 		
 		//Build a bot with selected parts
 		$newBot = $this->robots->create();
-		$id = $this->robots->size();
+		$botSecret = $this->secrets->get(2);
+        $botCount = intval($botSecret->value);
+        $botSecret->value = strval(intval($botSecret->value)+1);
+        $this->secrets->update($botSecret);
+        $plantSecret = $this->secrets->get(4);
+        $plantName = $plantSecret->value;
 		
-		$newBot->id = $id;
-		$newBot->botCode = "MANGO".$id;
+		$newBot->botCode = $plantName.$botCount;
 		$newBot->topCode = $top[2];
 		$newBot->torsoCode = $torso[2];
 		$newBot->bottomCode = $bottom[2];
@@ -121,7 +134,6 @@ class Assembly extends Application
 		//Record the building of a bot in history
 		$newHistory = $this->histories->create();
 
-		$newHistory->id = $this->histories->size();
 		$newHistory->transactionType = "Built Robot ".$newBot->botCode;
 		$newHistory->value = 0;
 		$newHistory->dateTime = $date = date('Y-m-d');
@@ -131,7 +143,6 @@ class Assembly extends Application
 		return $results;
 	}
 	
-    
 	/**
 	 * function that returns list of parts sent by POST.
 	 */
@@ -194,7 +205,6 @@ class Assembly extends Application
 			//Record the return of parts in history
 			$newHistory = $this->histories->create();
 
-			$newHistory->id = $this->histories->size();
 			$newHistory->transactionType = "Returned Part ".$partToReturn[$i]['caCode'];
 			$newHistory->value = $amount[1];
 			$newHistory->dateTime = $date = date('Y-m-d');
